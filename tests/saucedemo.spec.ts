@@ -1,4 +1,4 @@
-// Week 5 practice - feature branch
+// Week 5 practice - conflict-test branch
 import { test, expect } from '@playwright/test';
 
 test.describe('SauceDemo tests', () => {
