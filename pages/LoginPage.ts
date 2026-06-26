@@ -12,4 +12,8 @@ async goto() {
     await this.page.getByPlaceholder ('Password'). fill (password);
     await this.page.getByRole ('button',{name:'Login'}). click ();
   }
+  getErrorMessage() {
+  return this.page.getByText('Epic sadface: Username and password do not match any user in this service');
+  }
 }
+
