@@ -10,4 +10,6 @@ async addToCart() {
   getCartBadge() {
     return this.page.locator('.shopping_cart_badge');
   }
+  async removeFromCart() { 
+    await this.page.locator('[data-test="remove-sauce-labs-backpack"]').click(); }
 }

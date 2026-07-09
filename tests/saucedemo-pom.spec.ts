@@ -24,3 +24,13 @@ test('Add goods', async ({ page }) => {
   await inventoryPage.addToCart();
   await expect(inventoryPage.getCartBadge()).toHaveText('1');
 });
+
+test('Remove goods', async ({ page }) => { 
+const loginPage = new LoginPage(page); 
+const inventoryPage = new InventoryPage(page); 
+await loginPage.goto(); 
+await loginPage.login('standard_user', 'secret_sauce'); 
+await inventoryPage.addToCart(); 
+await inventoryPage.removeFromCart();
+await expect(inventoryPage.getCartBadge()).not.toBeVisible();
+ });
