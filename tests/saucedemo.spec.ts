@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// Week 5 practice - main branch
-=======
-// Week 5 practice - conflict-test branch
->>>>>>> conflict-test
 import { test, expect } from '@playwright/test';
 
 test.describe('SauceDemo tests', () => {
