@@ -12,4 +12,11 @@ async addToCart() {
   }
   async removeFromCart() { 
     await this.page.locator('[data-test="remove-sauce-labs-backpack"]').click(); }
+
+    async goToCart() {
+    await this.page.locator('.shopping_cart_link').click();
+}
+getCartItem() {
+  return this.page.getByText('Sauce Labs Backpack');
+}
 }
