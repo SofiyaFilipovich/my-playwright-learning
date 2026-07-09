@@ -34,3 +34,10 @@ await inventoryPage.addToCart();
 await inventoryPage.removeFromCart();
 await expect(inventoryPage.getCartBadge()).not.toBeVisible();
  });
+
+ test('Empty login', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.login('', '');
+  await expect(loginPage.getEmptyFormError()).toBeVisible();
+});

@@ -15,5 +15,9 @@ async goto() {
   getErrorMessage() {
   return this.page.getByText('Epic sadface: Username and password do not match any user in this service');
   }
+
+  getEmptyFormError(){
+    return this.page.getByText ('Epic sadface: Username is required');
+  }
 }
 
