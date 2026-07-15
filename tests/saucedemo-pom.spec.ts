@@ -51,3 +51,13 @@ await inventoryPage.addToCart();
 await inventoryPage.goToCart(); 
 await expect (inventoryPage.getCartItem()).toBeVisible (); 
 })
+
+test('Checkout flow', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  const inventoryPage = new InventoryPage(page);
+  await loginPage.goto();
+  await loginPage.login('standard_user', 'secret_sauce');
+  await inventoryPage.addToCart();
+  await inventoryPage.goToCheckout();
+  await expect(page).toHaveURL(/checkout/);
+});

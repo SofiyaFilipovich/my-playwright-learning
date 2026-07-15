@@ -19,4 +19,10 @@ async addToCart() {
 getCartItem() {
   return this.page.getByText('Sauce Labs Backpack');
 }
+
+async goToCheckout() {
+  await this.page.locator('.shopping_cart_link').click();
+  await this.page.getByRole('button', { name: 'Checkout' }).click();
+}
+
 }
